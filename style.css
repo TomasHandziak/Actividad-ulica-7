@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    gap: 10px;
+    height: 100vh; 
+    padding: 10px;
+
+    grid-template-areas:
+        "header menu"
+        "hero hero"
+        "main image"
+        "banner banner"
+        "extra image";
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 3fr 2fr auto auto;
+}
+
+.header, .menu, .hero, .main, .banner, .extra, .image {
+    text-align: center;
+    padding: 20px;
+}
+
+.header { background-color: #0d1b2a; color: white; }
+.menu { background-color: #e63946; color: white; }
+.hero { background-color: #457b9d; color: white; }
+.main { background-color: #1d3557; color: white; }
+.banner { background-color: #f4a261; color: black; }
+.extra { background-color: #2a9d8f; color: white; }
+.image { background-color: #a8dadc; color: black; }
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "hero hero"
+            "menu main"
+            "banner banner"
+            "extra image";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "menu"
+            "hero"
+            "main"
+            "banner"
+            "extra"
+            "image";
+        grid-template-columns: 1fr;
+    }
+}
